@@ -1,0 +1,64 @@
+@use './typography' as *;
+@use './global' as *;
+
+.hero-banner{
+    @extend body;
+    padding: 1rem;
+    background-image:linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)) ,url(../../assets/images/hero-shows.jpg);
+    background-size: cover;
+    min-height: 200px;
+    background-position: center;
+    color: #ffffff;
+
+    @include tablet{
+        padding: 3.75rem;
+        min-height: 500px;
+    }
+
+    @include desktop{
+        min-height: 700px;
+    }
+
+    &__logo{
+        font-size: 2rem;
+        font-weight: 600;
+        @include tablet{
+            font-size: 3.75rem;
+        }
+    }
+
+    // &__subheading{
+
+    // }
+}
+
+.showListing{
+    background-color: #ffffff;
+    &__header{
+        font-size: 2rem;
+        font-weight: 600;
+        
+        @include desktop{
+            font-size: 3.5rem;
+        }
+    }
+    // &__headings{
+    // }
+}
+.showHeading{
+    list-style: none;
+    color: #afafaf;
+    text-transform: uppercase;
+    // &__date{
+
+    // }
+    // &__venue{
+
+    // }
+    // &__location{
+
+    // }
+    // &__button{
+
+    // }
+}

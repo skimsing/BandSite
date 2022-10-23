@@ -1,97 +1,6 @@
 @use './typography' as *;
+@use'./global' as *;
 
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
-    }  
-}
-
-@mixin desktop {
-    @media (min-width: 1280px){
-        @content;
-    }
-    
-}
-*{ 
-    box-sizing: border-box;
-}
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color: #afafaf;
-    font-family: 'Avenir-Next', Arial, Helvetica, sans-serif;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-header{
-    @extend body;
-    background-color: #323232;
-    color: #ffffff;
-    align-items: center;
-    gap: 1rem;
-
-    .header__logo{ 
-        text-transform: uppercase;
-        font-size: 1.75rem;
-        font-weight: 300;
-        padding: 1rem;
-
-        @include tablet{
-            font-size: 2rem;
-        }
-    }
-    @include tablet{
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-}
-ul{
-    display: flex;
-    flex: row;
-
-    li{     
-        color: #ffffff;
-        text-decoration: none;
-    }
-    .nav__heading-box{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-}
-
-.nav__headings{
-
-    list-style: none;
-    justify-content: center;
-    display: inline-block;
-
-    @include tablet{
-        padding: 2rem;
-        margin: 0 2rem;
-    }
-    @include desktop{
-        margin: 0;
-    }
-    &:hover{
-        border-bottom: 2px solid #ffffff;
-    }
-}
-.nav__link{
-    color: #ffffff;
-    text-decoration: none;
-    margin: 1rem;
-    @include tablet{
-        margin: 0;
-    }
-}
 .hero-banner{
     @extend body;
     padding: 1rem;
@@ -272,126 +181,107 @@ ul{
         
     }
 }
-footer{
-    @extend body;
-    background-color: #323232;
-    color: #ffffff;
-    padding: 1rem;
-    font-size: 0.8rem;
-    flex-wrap: wrap;
 
-    @include desktop{
-        font-size: 1.5rem;
-
-    }
- 
-    
-}
-.footer__top{
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-    @include tablet{
-        flex-direction: row;
-        margin: 0;
-        padding: 1rem;
-    }
-}
-
-.footer__middle{
-    display: flex;
-    flex-flow: column wrap;
-    gap: 2rem;
-
-    @include tablet{
-        padding: 2rem;
-        gap: 4rem;
-        flex-flow: row wrap;
-    }
-}
-.social{
-    display: flex;
-    flex-flow: column wrap;
-    gap: 2rem;
-
-    @include tablet{
-        flex-flow: row wrap;
-    }
-
-    &__heading{
-        font-weight: 600;
-        font-size: 1.5rem;
-        @include tablet{
-            font-size: 3rem;
-        }
-    }
-    &__icons{
+.comments{
+    padding: 2rem 0;
+    background-color: #ffffff;
+    // width: 80%;
+    // margin: auto;
+    &__container{
         display: flex;
         flex-direction: row;
-        gap: 2rem;
-        margin-right: 1rem;
+        margin: 1rem auto;
+        justify-content: center;
+        gap: 1rem;
+    }
+    &__icon{
+        height: 2.15rem;
+        width: 2.15rem;
+        max-height: 10%;
+        border-radius: 50%;
+        
         @include tablet{
-            justify-content: center;
-            align-items: center;
-            margin: 0;
+            height: 3rem;
+            width: 3rem;
         }
     }
-    &__icons img {
-        height: 1.5rem;
-    }
-    &__icons a{
-        align-content: center;
-        justify-content: center;
-
-    }
-}
-.person{
-    font-size: 0.875;
-    font-weight: 600;
-    &__title{
-        margin-bottom: 1rem;
-    }
-    &__address{
-        font-weight: 300;
-    }
-    &__email{
-        font-weight: 300;
-        margin: 1rem 0;
-
-    }
-}
-.footer__logo{
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    @include desktop{
+    &__heading{
+        width: 80%;
+        margin: auto;
         font-size: 2rem;
+        font-weight: 600;
+        
     }
+    &__form{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+        padding: 1rem;
+        border-bottom: 1px solid #323232;
+        // margin: 1rem auto;
+    }
+    &__nameLabel, &__commentLabel{
+        text-transform: uppercase;
+        color: #afafaf;
+        font-weight: 600;
+        // margin: 0.5rem 0;
+    }
+    &__nameBox, &__commentBox{
+        background-color: #fafafa;
+        color: #323232;
+        border: 1px solid #afafaf;
+        border-radius: 5px;
+        min-height: 2rem;
+        padding: 5px;
+        margin: 0.5rem 0 1.5rem;
+    }
+    &__commentBox{
+        min-height: 5rem;
+        font-family: inherit;
+        
+    }
+    &__btn{
+        // max-width: 20%;
+        color: #ffffff;
+        padding: 0.7rem;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        background-color: #323232;
 
-}
-.footer__copyright{
-    margin: 0.4rem 0;
-    font-size: 0.7rem;
-    @include tablet{
-        margin: 2rem;
-    }
-    @include desktop{
-        font-size: 1.5rem;
     }
 }
-.footer__top > .footer__logo {
-    display: none;
-    @include tablet(){
-        display: contents;
+.displayed{
+    width: 80%;
+    margin: auto;
+
+    &__icon{
+        height: 2.15rem;
+        width: 2.15rem;
+        max-height: 10%;
+        border-radius: 50%;
+        background-color: #afafaf;
+        margin: 0 1rem;
+
+        @include tablet{
+            height: 3rem;
+            width: 3rem;
+        }
+    }
+    &__comment{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__box{
+        flex-direction: column;
+    }
+    &__label{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
-.footer__bottom > .footer__logo{
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    @include tablet{
-        display: none;
-    }
-    @include desktop{
-        display: none;
-    }
-}
+
 

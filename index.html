@@ -12,8 +12,8 @@
         <p class="header__logo">Bandsite</p>
         <nav>
             <ul class="nav__heading-box">
-                <li class="nav__headings"><a href="" class="nav__link">Biography</a></li>
-                <li class="nav__headings"><a href="" class="nav__link">Shows</a></li>
+                <li class="nav__headings"><a href="./index.html" class="nav__link">Biography</a></li>
+                <li class="nav__headings"><a href="./pages/shows.html" class="nav__link">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -51,6 +51,44 @@
             <img class="gallery__photo" src="./assets/images/Photo-gallery-9.jpg" alt="photo 9">
         </div>
     </section>
+
+    <section class="comments">
+
+        <h3 class="comments__heading">Join the Conversation</h3>
+        <div class="comments__container">
+
+            <!-- <div class="comments_section"> -->
+                <img class="comments__icon" src="./assets/images/Mohan-muruge.jpg" alt="headIcon">
+                <form class="comments__form">
+                    <label class="comments__nameLabel" for="commentName">Name</label>
+                    <input type="text" class="comments__nameBox" name="commentName" placeholder="Enter your name">
+                    <label class="comments__commentLabel" for="commentText">Comment</label>
+                    <textarea class="comments__commentBox" name="commentText" placeholder="Add a new comment"></textarea>
+                    <button class="comments__btn" type="submit" name="btn">Comment</button>
+                </form>
+                <!-- </div> -->
+                
+            </div>
+       
+            
+        <div class="displayed">
+
+            <!-- <div class="displayed__comment">
+                <div class="displayed__icon"></div>
+                
+                <div class="displayed__box">
+                    <div class="displayed__label">
+                        <p class="displayed__name">Yahoo Answers</p>
+                        <p class="displayed__date">01/01/2000</p>
+                    </div>
+                    <p class="displayed__text">here is some text to go into a box</p>
+                </div>
+            </div> -->
+
+        </div>
+
+    </section>
+    
     <footer>
         <div class="footer__top">
             <div class="social">
@@ -62,9 +100,7 @@
                     <a href=""><img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon"></a>
                 </div>
             </div>
-            <!-- <div class="social"> -->
             <p class="footer__logo">Bandsite</p>
-            <!-- </div> -->
         </div>
 
         <div class="footer__middle">
@@ -95,5 +131,6 @@
             <p class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
     </footer>
+    <script src="./scripts/index-page.js"></script>
 </body>
 </html>
