@@ -9,47 +9,55 @@
 </head>
 <body>
     <header>
-        <p class="header__logo">Bandsite</p>
+        <a class="header__logo" href="../index.html">
+            <img  src="../assets/logo/Logo-bandsite.svg">
+        </a>
         <nav>
             <ul class="nav__heading-box">
-                <li class="nav__headings"><a href="../index.html" class="nav__link">Biography</a></li>
-                <li class="nav__headings"><a href="./shows.html" class="nav__link">Shows</a></li>
+                <li class="nav__bio"><a href="../index.html" class="nav__link">Biography</a></li>
+                <li class="nav__shows"><a href="./shows.html" class="nav__link">Shows</a></li>
             </ul>
         </nav>
     </header>
+
     <section class="hero-banner">
-        <h2 class="hero-banner__subheading">Beautiful Beasts Album</h2>
-        <h3 class="hero-banner__logo">Queen of Yellow x For The Stings</h3>
-        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/503365488&color=%236c0808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-            <a href="https://soundcloud.com/ryoma-kun" title="Ryoma Hoshi Records" target="_blank" style="color: #cccccc; text-decoration: none;">Ryoma Hoshi Records</a> · <a href="https://soundcloud.com/ryoma-kun/merlin-redalice" title="[グルーヴコースター 音源] MERLIN (Bass Mix.) - REDALiCE" target="_blank" style="color: #cccccc; text-decoration: none;">[グルーヴコースター 音源] MERLIN (Bass Mix.) - REDALiCE</a>
-        </div>
+        <!-- <div class="hero-banner__container"> -->
+            <div class="hero-banner__text">
+                <h2 class="hero-banner__subheading">Beautiful Beasts Album</h2>
+                <h1 class="hero-banner__logo">Queen of Yellow x For The Stings</h1>
+            </div>
+            <iframe scrolling="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/503365488&color=%236c0808&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <!-- </div> -->
     </section>
 
     <section class="showListing">
         <h3 class="showListing__header">Shows</h3>
         
-        <div class="showListing__tablet">
-            <div class="showListing__headings">
-                <ul class="showHeading">
-                    <li class="showHeading__date">date</li>
-                    <li class="showHeading__venue">venue</li>
-                    <li class="showHeading__location">location</li>
-                    <li class="showHeading__button">button</li>
-                </ul>
-            </div>
-        </div>
+        <div class="showListing__details">
+            
+            <!-- for tablet/ desktop headings -->
+            <div class="showHeadings">
+                    <ul class="showHeadings__list">
+                        <li class="showHeadings__date">date</li>
+                        <li class="showHeadings__venue">venue</li>
+                        <li class="showHeadings__location">location</li>
+                    </ul>
+                    <div class="showHeadings__btn"></div>
+                </div>
 
-        <div class="showsListing__shows">
-            <ul class="showListing__showHolder">
-                <li class="showListing__show">
-                    <li class="showListing__date">date</li>
-                    <li class="showListing__venue">venue</li>
-                    <li class="showListing__location">loc</li>
-                </li>
-            </ul>
+                <!-- <div class="showListing__showItem">
+                    <ul class="showListing__infoList">
+                        <li class="showListing__date">date</li>
+                        <li class="showListing__showDate">Mon Sept 06 2021</li>
+                        <li class="showListing__venue">venue</li>
+                        <li class="showListing__showVenue">Ronald Lane</li>
+                        <li class="showListing__location">location</li>
+                        <li class="showListing__showLocation">San Francisco, CA</li>
+                    </ul>
+                    <button type="submit" class="showListing__buyBtn" name="buyBtn">Buy Tickets</button>
+                </div> -->
         </div>
-
+            
         
     </section>
 
@@ -64,7 +72,7 @@
                     <a href=""><img src="../assets/icons/SVG/Icon-twitter.svg" alt="twitter icon"></a>
                 </div>
             </div>
-            <p class="footer__logo">Bandsite</p>
+            <img class="footer__logo" src="../assets/logo/Logo-bandsite.svg">
         </div>
 
         <div class="footer__middle">
@@ -91,7 +99,7 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <p class="footer__logo">Bandsite</p>
+            <img class="footer__logo" src="../assets/logo/Logo-bandsite.svg">
             <p class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
     </footer>

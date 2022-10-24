@@ -55,12 +55,15 @@ function displayComment(comment){
            
 
         //make new comment area 
+        let comContainer = document.createElement("div");
+        comContainer.classList.add("displayed__container");
+
         let newCom = document.createElement("div");
         newCom.classList.add("displayed__comment");
 
         
         //make comment section
-        let icon = document.createElement("div");
+        let icon = document.createElement("img");
         icon.classList.add("displayed__icon");
 
         let comArea = document.createElement("div");
@@ -84,7 +87,8 @@ function displayComment(comment){
         text.innerText = arrText;
         
         //append children
-        display.appendChild(newCom);
+        display.appendChild(comContainer);
+        comContainer.appendChild(newCom);
         newCom.appendChild(icon);
         newCom.appendChild(comArea);
         comArea.appendChild(label);

@@ -9,18 +9,20 @@
 </head>
 <body>
     <header>
-        <p class="header__logo">Bandsite</p>
+        <a class="header__logo" href="index.html">
+            <img src="./assets/logo/Logo-bandsite.svg">
+        </a>
         <nav>
             <ul class="nav__heading-box">
-                <li class="nav__headings"><a href="./index.html" class="nav__link">Biography</a></li>
-                <li class="nav__headings"><a href="./pages/shows.html" class="nav__link">Shows</a></li>
+                <li class="nav__bio"><a href="./index.html" class="nav__link">Biography</a></li>
+                <li class="nav__shows"><a href="./pages/shows.html" class="nav__link">Shows</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero-banner">
         <div class="hero-banner__tint"></div>
-        <p class="hero-banner__logo">The Bees Knees</p>
+        <h1 class="hero-banner__logo">The Bees Knees</h1>
     </section>
 
     <section class="about">
@@ -55,33 +57,38 @@
     <section class="comments">
 
         <h3 class="comments__heading">Join the Conversation</h3>
+
         <div class="comments__container">
 
-            <!-- <div class="comments_section"> -->
-                <img class="comments__icon" src="./assets/images/Mohan-muruge.jpg" alt="headIcon">
-                <form class="comments__form">
-                    <label class="comments__nameLabel" for="commentName">Name</label>
-                    <input type="text" class="comments__nameBox" name="commentName" placeholder="Enter your name">
-                    <label class="comments__commentLabel" for="commentText">Comment</label>
-                    <textarea class="comments__commentBox" name="commentText" placeholder="Add a new comment"></textarea>
-                    <button class="comments__btn" type="submit" name="btn">Comment</button>
-                </form>
-                <!-- </div> -->
-                
+            <div class="comments__section">
+            <img class="comments__icon" src="./assets/images/Mohan-muruge.jpg" alt="headIcon">
+            
+            <form class="comments__form">
+                <label class="comments__nameLabel" for="commentName">Name</label>
+                <input type="text" class="comments__nameBox" name="commentName" placeholder="Enter your name">
+                <label class="comments__commentLabel" for="commentText">Comment</label>
+                <textarea class="comments__commentBox" name="commentText" placeholder="Add a new comment"></textarea>
+                <button class="comments__btn" type="submit" name="btn">Comment</button>
+            </form>
             </div>
+                
+        </div>
        
             
         <div class="displayed">
 
-            <!-- <div class="displayed__comment">
-                <div class="displayed__icon"></div>
+            <!-- <div class="displayed__container">
                 
-                <div class="displayed__box">
-                    <div class="displayed__label">
-                        <p class="displayed__name">Yahoo Answers</p>
-                        <p class="displayed__date">01/01/2000</p>
+                <div class="displayed__comment">
+                    <div class="displayed__icon"></div>
+                    
+                    <div class="displayed__box">
+                        <div class="displayed__label">
+                            <p class="displayed__name">Yahoo Answers</p>
+                            <p class="displayed__date">01/01/2000</p>
+                        </div>
+                        <p class="displayed__text">hat makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains. I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my sp</p>
                     </div>
-                    <p class="displayed__text">here is some text to go into a box</p>
                 </div>
             </div> -->
 
@@ -100,7 +107,7 @@
                     <a href=""><img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon"></a>
                 </div>
             </div>
-            <p class="footer__logo">Bandsite</p>
+            <img class="footer__logo" src="./assets/logo/Logo-bandsite.svg">
         </div>
 
         <div class="footer__middle">
@@ -127,7 +134,8 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <p class="footer__logo">Bandsite</p>
+            <!-- <p class="footer__logo">Bandsite</p> -->
+            <img class="footer__logo" src="./assets/logo/Logo-bandsite.svg">
             <p class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
     </footer>

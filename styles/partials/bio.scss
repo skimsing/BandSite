@@ -1,8 +1,12 @@
 @use './typography' as *;
 @use'./global' as *;
+@use'./fonts' as*;
 
 .hero-banner{
-    @extend body;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 1rem;
     background-image:linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)) ,url(../../assets/images/hero-bio.jpg);
     background-size: cover;
@@ -20,15 +24,14 @@
 
     &__logo{
         color: #ffffff;
-        font-size: 2rem;
         font-weight: 600;
-        @include tablet{
-            font-size: 3.75rem;
-        }
     }
 }
 .about{
-    @extend body;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #ffffff;
     padding: 1rem;
 
@@ -133,7 +136,8 @@
 }
 
 .gallery{
-    @extend body;
+    max-width: 100%;
+    display: flex;
     background-color: #fafafa;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -142,15 +146,13 @@
 
     &__heading{
         width: 100%;
-        font-weight: 300;
-        font-size: 1.5rem;
+        font-weight: 600;
         margin: 1rem;
 
         @include tablet{
             font-size: 3rem;
         }
         @include desktop{
-            font-weight: 600;
             width: 80%;
             margin: auto;
             padding: 2rem 0;
@@ -188,18 +190,33 @@
     // width: 80%;
     // margin: auto;
     &__container{
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: center;
+        margin: 1rem auto;
+        gap: 1rem;
+        @include desktop{
+            width: 60%;
+            margin: auto;
+        }
+    }
+    &__section{
         display: flex;
         flex-direction: row;
-        margin: 1rem auto;
         justify-content: center;
+        width: 80%;
+        margin: auto;
         gap: 1rem;
+        padding: 1rem;
+        border-bottom: 2px solid #e1e1e1;
+
+
     }
     &__icon{
         height: 2.15rem;
         width: 2.15rem;
         max-height: 10%;
         border-radius: 50%;
-        
         @include tablet{
             height: 3rem;
             width: 3rem;
@@ -217,8 +234,8 @@
         justify-content: center;
         flex-direction: column;
         width: 80%;
-        padding: 1rem;
-        border-bottom: 1px solid #323232;
+        // padding: 1rem;
+        // border-bottom: 2px solid #e1e1e1;
         // margin: 1rem auto;
     }
     &__nameLabel, &__commentLabel{
@@ -256,11 +273,16 @@
     width: 80%;
     margin: auto;
 
+    &__container{
+        @extend .comments__container;
+    }
+
     &__icon{
-        height: 2.15rem;
-        width: 2.15rem;
-        max-height: 10%;
-        border-radius: 50%;
+        @extend .comments__icon;
+        // height: 2.15rem;
+        // width: 2.15rem;
+        // max-height: 10%;
+        // border-radius: 50%;
         background-color: #afafaf;
         margin: 0 1rem;
 
@@ -270,17 +292,28 @@
         }
     }
     &__comment{
+        // @extend .comments__section;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 1rem 0;
+        border-bottom: 2px solid #e1e1e1;
     }
     &__box{
-        flex-direction: column;
+        // flex-direction: column;
+        @extend .comments__form;
     }
     &__label{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+    &__name{
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+    &__date{
+        color: #afafaf;
     }
 }
 

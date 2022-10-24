@@ -1,64 +1,168 @@
 @use './typography' as *;
 @use './global' as *;
+@use './fonts' as *;
 
 .hero-banner{
-    @extend body;
-    padding: 1rem;
     background-image:linear-gradient(rgba(50, 50, 50, 0.5),rgba(50, 50, 50, 0.5)) ,url(../../assets/images/hero-shows.jpg);
     background-size: cover;
-    min-height: 200px;
+    max-width: 100%;
     background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 2rem 1rem;
+    min-height: 200px;
     color: #ffffff;
-
+    
     @include tablet{
-        padding: 3.75rem;
         min-height: 500px;
+        padding: 3.75rem;
     }
-
+    
     @include desktop{
         min-height: 700px;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        padding: 10%;
     }
 
     &__logo{
-        font-size: 2rem;
         font-weight: 600;
-        @include tablet{
-            font-size: 3.75rem;
-        }
+        padding: 1rem 0;
     }
 
-    // &__subheading{
+    &__text{
+        @include tablet{
+            width: 80%;
+        }
+        @include desktop{
+            width: 50%;
+        }
+    }
+}
 
-    // }
+iframe{
+    height: 166px; 
+    border: none; 
+    @include tablet{
+        width: 50%;
+    }
+}
+
+.showHeadings{
+    display: none;
+    @include tablet{
+        display: block;
+        padding: 1rem;
+    }
+    &__list{
+        @include tablet{
+            list-style: none;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-evenly;
+            justify-content: space-between;
+            width: 80%;
+        }    
+    }
+    &__date, &__venue, &__location{
+        @include tablet{
+            color: #afafaf;
+            width: 33%;
+        }   
+    }
+    &__btn{
+        min-width: 140px;
+    }
+    
 }
 
 .showListing{
     background-color: #ffffff;
-    &__header{
-        font-size: 2rem;
-        font-weight: 600;
-        
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 5% 10%;
+
+    }
+    &__details{
         @include desktop{
-            font-size: 3.5rem;
+            width: 80%;
+            margin: auto;
+        }
+
+    }
+    &__header{
+        font-weight: 600;
+        margin: 1.5rem 1rem;
+    }
+
+    //items added from JS
+    &__showItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        border-bottom: 2px solid #e1e1e1;
+
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+    }
+    &__infoList{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0.5rem 0;
+        @include tablet{
+            width: 80%;
+            flex-direction: row;
+            justify-content: space-between;
+        
         }
     }
-    // &__headings{
-    // }
+
+    &__date, &__venue, &__location{
+        text-transform: uppercase;
+        color: #afafaf;
+        font-weight: 600;
+        padding: 0.5rem 0;
+
+        @include tablet{
+            display: none;
+        }
+    }
+    &__showDate, &__showVenue, &__showLocation{
+        color: #000;
+        padding-bottom: 0.7rem;
+        @include tablet{
+            width: 33%;
+        }
+    }
+    &__showDate{
+        font-weight: 600;
+    }
+    &__buyBtn{
+        border: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 1rem;
+        color: #ffffff;
+        background-color: #323232;
+    }
 }
-.showHeading{
-    list-style: none;
-    color: #afafaf;
-    text-transform: uppercase;
-    // &__date{
 
-    // }
-    // &__venue{
-
-    // }
-    // &__location{
-
-    // }
-    // &__button{
-
-    // }
-}
