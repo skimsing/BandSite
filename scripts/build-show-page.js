@@ -32,6 +32,7 @@ let showData = [
 
 ]
 
+
 function displayShows(show){
     //add show dates to this section 
     let displayShow = document.querySelector(".showListing__details");
@@ -46,6 +47,9 @@ function displayShows(show){
         //create new show box
         let newShow = document.createElement("div");
         newShow.classList.add("showListing__showItem");
+        newShow.addEventListener("click", (e) => {
+            newShow.style.backgroundColor = "#e1e1e1";
+        });
         displayShow.appendChild(newShow);
 
         let showHolder = document.createElement("ul");

@@ -122,6 +122,9 @@ iframe{
         }
 
     }
+    &__showItem:hover{
+        background-color: #fafafa;
+    }
     &__infoList{
         display: flex;
         flex-direction: column;
@@ -165,4 +168,3 @@ iframe{
         background-color: #323232;
     }
 }
-

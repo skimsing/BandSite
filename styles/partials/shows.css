@@ -378,6 +378,9 @@ iframe {
     justify-content: space-between;
   }
 }
+.showListing__showItem:hover {
+  background-color: #fafafa;
+}
 .showListing__infoList {
   display: flex;
   flex-direction: column;
