@@ -40,7 +40,6 @@ header {
   background-color: #323232;
   color: #ffffff;
   align-items: center;
-  gap: 1rem;
 }
 header .header__logo {
   padding: 1rem;
@@ -57,17 +56,27 @@ ul li {
   text-decoration: none;
 }
 
+nav {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  nav {
+    width: auto;
+  }
+}
+
 .nav__heading-box {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  width: 100%;
+  align-content: center;
 }
 
 .nav__bio, .nav__shows {
+  display: flex;
   list-style: none;
   justify-content: center;
-  display: inline-block;
+  align-content: center;
   width: 50%;
 }
 @media (min-width: 768px) {

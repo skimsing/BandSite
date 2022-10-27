@@ -1,57 +1,85 @@
-let commented = [
-    {
-        name: "Connor Walton",
-        date: "02/17/2021",
-        yourComment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    {
-        name:"Emilie Beach",
-        date:"01/09/2021",
-        yourComment:"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        name:"Miles Acosta",
-        date:"12/20/2020",
-        yourComment:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-
-    }
-];
+//get data from API
+const api_key = "7fd7419a-b417-4492-89b9-bfafe5a493bf";
+const commentsApi = "https://project-1-api.herokuapp.com/comments?api_key=" + api_key;
 
 //get comments in form
 let formBox = document.querySelector(".comments__form");
-formBox.addEventListener("submit",getComments);
+formBox.addEventListener("submit", e => {
+    e.preventDefault();
+    postComments(e);
+});
 
+function postComments(form){
+
+    axios.post(commentsApi,{
+        name: `${form.target.commentName.value}`,
+        comment: `${form.target.commentText.value}`,
+    
+    }).then(res =>{
+        loadComment();
+        form.target.commentName.value= "";
+        form.target.commentText.value = "";
+    
+    }).catch(error => {
+        console.log("Something is broken");
+    });
+}
+
+function formatDate(){
+
+}
 //get date
-const dateNow = new Date();
-const dateString = dateNow.toLocaleDateString("en-GB");
+// const dateNow = new Date();
+// const dateString = dateNow.toLocaleDateString("en-GB");
 
-function getComments(form){
-    form.preventDefault();
+
+function loadComment(){
+    axios.get(commentsApi).then(e => {
+
+        let raw = e.data;
+        raw.sort((a,b) => {
+            return b.timestamp - a.timestamp;
+        });
+        displayComment(raw);
+
     
-    let comment ={
-        name: form.target.commentName.value,
-        date: dateString,
-        yourComment: form.target.commentText.value,
-    }
+    }).catch(error => {
+        console.log("Couldn't get comments. Something went wrong");
+    });
+}
+
+
+// function getComments(form){
+    // form.preventDefault();
     
-    commented.unshift(comment);
-    displayComment(commented);
-};
+    // let comment ={
+        // name: form.target.name.value,
+        // date: dateString,
+        // yourComment: form.target.comment.value,
+    //     name: form.name,
+    //     date: new Date(form.timestamp),
+    //     yourComment: form.comment,
+    // }
+    
+    // commented.unshift(comment);
+    // displayComment(commented);
+// };
 
-function displayComment(comment){
+function displayComment(commentArray){
 
-    //clear all current comments
     //find comment area
     let display = document.querySelector(".displayed");
-
+    
+    //clear all current comments
     display.innerText = "";
 
     //create comment
-    for(let i = 0; i <comment.length; i++){
+    commentArray.forEach(element => {
+            
         //grab from array
-        let arrName = comment[i].name;
-        let arrDate = comment[i].date;
-        let arrText = comment[i].yourComment;
+        let arrName = element.name;
+        let arrDate = new Date(element.timestamp).toLocaleDateString("en-US");
+        let arrText = element.comment;
            
 
         //make new comment area 
@@ -95,9 +123,15 @@ function displayComment(comment){
         label.appendChild(newName);
         label.appendChild(newDate);
         comArea.appendChild(text);
-    }
+        });
+    // }
 
 };
 
-displayComment(commented);
+// displayComment(commented);
 
+function sortComment(){
+
+}
+
+loadComment();

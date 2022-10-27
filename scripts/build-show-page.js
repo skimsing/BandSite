@@ -1,37 +1,16 @@
-let showData = [
-    {
-        date: "Mon Sept 06 2021",
-        venue:"Ronald Lane",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA",
-    },
+//get data from API
+const api_key = "7fd7419a-b417-4492-89b9-bfafe5a493bf";
+const showsApi = "https://project-1-api.herokuapp.com/showdates?api_key=" + api_key;
 
-]
+axios.get(showsApi).then(e => {
+    //get shows
+    let showy = e.data;
+    displayShows(showy);
+  
 
+}).catch(error => {
+    console.log("Couldn't get shows, something went wrong")
+});
 
 function displayShows(show){
     //add show dates to this section 
@@ -40,15 +19,21 @@ function displayShows(show){
     show.forEach(element => {
 
         //get data from array
-        let getDate = element.date;
-        let getVenue = element.venue;
+        let getDate = new Date(element.date).toDateString("en-US");
+        let getVenue = element.place;
         let getLocation = element.location;
 
         //create new show box
         let newShow = document.createElement("div");
         newShow.classList.add("showListing__showItem");
         newShow.addEventListener("click", (e) => {
-            newShow.style.backgroundColor = "#e1e1e1";
+
+            let selected = document.querySelector(".selected");
+            if(selected !== null){
+                selected.classList.remove("selected");
+            }
+            
+            e.currentTarget.classList.add("selected");
         });
         displayShow.appendChild(newShow);
 
@@ -98,4 +83,4 @@ function displayShows(show){
     });
 }
 
-displayShows(showData);
+// displayShows(showData);
