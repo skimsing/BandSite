@@ -25,11 +25,6 @@ function postComments(form){
     });
 }
 
-//get date
-// const dateNow = new Date();
-// const dateString = dateNow.toLocaleDateString("en-GB");
-
-
 function loadComment(){
     axios.get(commentsApi).then(e => {
 
@@ -45,22 +40,6 @@ function loadComment(){
     });
 }
 
-
-// function getComments(form){
-    // form.preventDefault();
-    
-    // let comment ={
-        // name: form.target.name.value,
-        // date: dateString,
-        // yourComment: form.target.comment.value,
-    //     name: form.name,
-    //     date: new Date(form.timestamp),
-    //     yourComment: form.comment,
-    // }
-    
-    // commented.unshift(comment);
-    // displayComment(commented);
-// };
 
 function displayComment(commentArray){
 
@@ -109,17 +88,14 @@ function displayComment(commentArray){
         
         let likeBtn = document.createElement("button");
         let likesDisplay = document.createElement("p");
-        // likesDisplay.classList.add("displayed__likeCounter");
         likesDisplay.innerText = `${likes}`;
         likeBtn.innerText="like";
         likeBtn.classList.add("displayed__likeBtn");
         likeBtn.addEventListener('click', event => {
             axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=7fd7419a-b417-4492-89b9-bfafe5a493bf`)
-            .then(res => {
-                // console.log(res); 
+            .then(e => {
                 likesDisplay.innerText = "";
                 likesDisplay.innerText = `${likes}`;
-                // displayComment(res.data)
             })
         });
         
@@ -142,14 +118,8 @@ function displayComment(commentArray){
         comArea.appendChild(likeBtn);
         likeBtn.appendChild(likesDisplay);
     });
-    // }
 
 };
 
-// displayComment(commented);
-
-function sortComment(){
-
-}
 
 loadComment();

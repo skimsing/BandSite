@@ -82,5 +82,3 @@ function displayShows(show){
         newShow.appendChild(buyTic);
     });
 }
-
-// displayShows(showData);

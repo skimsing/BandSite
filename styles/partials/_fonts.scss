@@ -1,7 +1,6 @@
 @use './typography' as *;
 @use'./global' as *;
 
-// Button
 button{
     font-size: 1.2rem;
     @include tablet{
