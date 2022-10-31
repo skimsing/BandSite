@@ -25,9 +25,6 @@ function postComments(form){
     });
 }
 
-function formatDate(){
-
-}
 //get date
 // const dateNow = new Date();
 // const dateString = dateNow.toLocaleDateString("en-GB");
@@ -80,7 +77,8 @@ function displayComment(commentArray){
         let arrName = element.name;
         let arrDate = new Date(element.timestamp).toLocaleDateString("en-US");
         let arrText = element.comment;
-           
+        let id = element.id;  
+        let likes = element.likes;
 
         //make new comment area 
         let comContainer = document.createElement("div");
@@ -109,6 +107,23 @@ function displayComment(commentArray){
         let text = document.createElement('p');
         text.classList.add("displayed__text");
         
+        let likeBtn = document.createElement("button");
+        let likesDisplay = document.createElement("p");
+        // likesDisplay.classList.add("displayed__likeCounter");
+        likesDisplay.innerText = `${likes}`;
+        likeBtn.innerText="like";
+        likeBtn.classList.add("displayed__likeBtn");
+        likeBtn.addEventListener('click', event => {
+            axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=7fd7419a-b417-4492-89b9-bfafe5a493bf`)
+            .then(res => {
+                // console.log(res); 
+                likesDisplay.innerText = "";
+                likesDisplay.innerText = `${likes}`;
+                // displayComment(res.data)
+            })
+        });
+        
+        
         //add text to boxes 
         newName.innerText = arrName;
         newDate.innerText = arrDate;
@@ -123,7 +138,10 @@ function displayComment(commentArray){
         label.appendChild(newName);
         label.appendChild(newDate);
         comArea.appendChild(text);
-        });
+        //button
+        comArea.appendChild(likeBtn);
+        likeBtn.appendChild(likesDisplay);
+    });
     // }
 
 };

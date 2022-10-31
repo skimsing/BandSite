@@ -35,19 +35,14 @@
     background-color: #ffffff;
     padding: 1rem;
 
-    p{
-        margin: 1rem 0;
-        @include tablet{
-            width: 90%;
-            margin: 0 auto;
-        }
-    }
+   
     &__image-box{
         display: flex;
         justify-content: center;
         margin: 1rem;
     }
-    &__text{
+    &__intro{
+        
         @include tablet{
             display: flex;
             flex-direction: row;
@@ -57,12 +52,15 @@
             margin: auto;
         }
         @include desktop{
-            font-size: 1.2rem;
+            // font-size: 1.2rem;
             width: 60%;
             margin: auto;
             gap: 2rem;
             line-height: 1.7rem;
         }
+    }
+    &__text{
+        margin: 1rem 0;
     }
     &__image{
         max-width: 100%;
@@ -76,15 +74,15 @@
         max-width: 30%;
     }
     &__heading{
-        font-size: 2rem;
+        // font-size: 2rem;
         font-weight: 600;
         
         @include tablet{
-            font-size: 2rem;
+            // font-size: 2rem;
             margin: 1rem 0;
         }
         @include desktop{
-            font-size: 3rem;
+            // font-size: 3rem;
             width: 90%;
             margin: auto;
             padding: 2rem;
@@ -98,7 +96,7 @@
             margin: 0 auto;
         }
         @include desktop{
-            font-size: 1rem;
+            // font-size: 1rem;
             width: 70%;
             margin: auto;
             padding: 3rem 0;
@@ -111,25 +109,29 @@
             margin: 0 auto;
         }
         @include desktop{
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
             line-height: 2.5rem;
         }
 
     }
+    &__quotee{
+        @extend .about__quote;
+        margin: 1rem auto;
+    }
     &__subheading{
         font-weight: 300;
-        font-size: 1rem;
+        // font-size: 1rem;
         margin: 1rem 0;
         @include tablet{
             font-weight: 600;
-            font-size: 1.5rem;
+            // font-size: 1.5rem;
             width: 80%;
             margin: auto;
             padding: 1rem 0;
         }
         @include desktop{
             width: 60%;
-            font-size: 2rem;
+            // font-size: 2rem;
             padding: 2rem 0;
         }
     }
@@ -149,9 +151,9 @@
         font-weight: 600;
         margin: 1rem;
 
-        @include tablet{
-            font-size: 3rem;
-        }
+        // @include tablet{
+        //     font-size: 3rem;
+        // }
         @include desktop{
             width: 80%;
             margin: auto;
@@ -225,7 +227,7 @@
     &__heading{
         width: 80%;
         margin: auto;
-        font-size: 2rem;
+        // font-size: 2rem;
         font-weight: 600;
         
     }
@@ -299,7 +301,8 @@
         padding: 1rem 0;
         border-bottom: 2px solid #e1e1e1;
     }
-    &__box{
+    // comArea in index-page.JS
+    &__box{ 
         // flex-direction: column;
         @extend .comments__form;
     }
@@ -315,6 +318,22 @@
     &__date{
         color: #afafaf;
     }
+    &__likeBtn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 0;
+        max-width: 15%;
+        color: #ffffff;
+        padding: 0.3rem;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        background-color: #323232;
+    }
+    // &__likeCounter{
+    //     font-size: 0.9rem;
+    // }
 }
 
 

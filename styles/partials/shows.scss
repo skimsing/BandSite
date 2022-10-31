@@ -105,6 +105,10 @@ iframe{
     &__header{
         font-weight: 600;
         margin: 1.5rem 1rem;
+
+        // @include desktop{
+        //     translateY: -2.1rem;
+        // }
     }
 
     //items added from JS

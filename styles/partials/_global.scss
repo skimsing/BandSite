@@ -21,7 +21,7 @@ body{
     background-color: #afafaf;
     font-family: 'Avenir-Next', Arial, Helvetica, sans-serif;
 }
-header{
+.header{
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,8 +57,11 @@ nav{
     justify-content: space-evenly;
     align-content: center;
 }
-
 .nav__bio, .nav__shows{
+    border-bottom: 2px solid #ffffff;
+}
+
+.nav__li{
     display: flex;
     list-style: none;
     justify-content: center;
@@ -92,13 +95,13 @@ footer{
     background-color: #323232;
     color: #ffffff;
     padding: 1rem;
-    font-size: 0.8rem;
+    // font-size: 0.8rem;
     flex-wrap: wrap;
 
-    @include desktop{
-        font-size: 1.5rem;
+    // @include desktop{
+    //     // font-size: 1.5rem;
 
-    }
+    // }
  
     
 }
@@ -135,10 +138,10 @@ footer{
 
     &__heading{
         font-weight: 600;
-        font-size: 1.5rem;
-        @include tablet{
-            font-size: 3rem;
-        }
+        // font-size: 1.5rem;
+        // @include tablet{
+        //     font-size: 3rem;
+        // }
     }
     &__icons{
         display: flex;
@@ -161,7 +164,7 @@ footer{
     }
 }
 .person{
-    font-size: 0.875;
+    // font-size: 0.875;
     font-weight: 600;
     &__title{
         margin-bottom: 1rem;
@@ -177,13 +180,13 @@ footer{
 }
 .footer__copyright{
     margin: 0.4rem 0;
-    font-size: 0.7rem;
+    // font-size: 0.7rem;
     @include tablet{
         margin: 2rem;
     }
-    @include desktop{
-        font-size: 1.5rem;
-    }
+    // @include desktop{
+    //     font-size: 1.5rem;
+    // }
 }
 .footer__top > .footer__logo {
     display: none;

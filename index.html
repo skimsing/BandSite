@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/partials/bio.css"/>
+    <link rel="stylesheet" href="./styles/partials/bio.css">
     <title>BandSite</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <a class="header__logo" href="index.html">
             <img src="./assets/logo/Logo-bandsite.svg" alt="bandsite logo">
         </a>
         <nav>
             <ul class="nav__heading-box">
-                <li class="nav__bio"><a href="./index.html" class="nav__link">Biography</a></li>
-                <li class="nav__shows"><a href="./pages/shows.html" class="nav__link">Shows</a></li>
+                <li class="nav__li nav__bio"><a href="./index.html" class="nav__link">Biography</a></li>
+                <li class="nav__li"><a href="./pages/shows.html" class="nav__link">Shows</a></li>
             </ul>
         </nav>
     </header>
@@ -29,13 +29,13 @@
         <h3 class="about__heading">About the Musicians</h3>
         <div class="about__image-box"><img class="about__image" src="./assets/images/band.jpg" alt="band image"></div>
         <div class="about__box">
-            <p class="about__quote">“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”</p>
-            <p class="about__quote">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+            <h2 class="about__quote">“We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be better, back to the drawing board’”</h2>
+            <p class="about__quotee">- Bryan Teddy, lead vocalist of The Bees Knees</p>
         </div>
-        <h3 class="about__subheading">The Bees Knees</h3>
-        <div class="about__text">
-                <p>TheBees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with other popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could succeed even further, pushing them to sign with Magenta Records.</p>
-                <p>From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are currently recording their second studio album, looking to be released in late 2021.</p>
+        <h2 class="about__subheading">The Bees Knees</h2>
+        <div class="about__intro">
+            <p class="about__text">The Bees Knees is a pop rock band originating from San Francisco, California. The band consists of lead vocalist Bryan Teddy, guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer Freddie Fischer. The band achieved its first commercial success as an unsigned act, drawing attention from manager Cam Adams. Having worked with other popular acts (The Elephant In The Room, One Trick Pony, The Cat’s Meow), Adams was confident the band could succeed even further, pushing them to sign with Magenta Records.</p>
+            <p class="about__text">From there, the band has soared, gaining international recognition and ranking in the top 10 on the Poster Charts. New fans immediately fell in love with the band’s original and organic attitude, solidifying their place as one of the hottest and fastest up and coming acts of this century. Fans affectionately refer to themselves as “The Hive” and are drawn to their candid and authentic performances on stage. Looking forward to touring in the future, The Bees Knees are currently recording their second studio album, looking to be released in late 2021.</p>
         </div> 
     </section>
 
@@ -65,9 +65,9 @@
             
             <form class="comments__form">
                 <label class="comments__nameLabel" for="commentName">Name</label>
-                <input type="text" class="comments__nameBox" name="commentName" placeholder="Enter your name">
+                <input type="text" class="comments__nameBox" name="commentName" id="commentName" placeholder="Enter your name">
                 <label class="comments__commentLabel" for="commentText">Comment</label>
-                <textarea class="comments__commentBox" name="commentText" placeholder="Add a new comment"></textarea>
+                <textarea class="comments__commentBox" name="commentText" id="commentText" placeholder="Add a new comment"></textarea>
                 <button class="comments__btn" type="submit" name="btn">Comment</button>
             </form>
             </div>
@@ -76,22 +76,6 @@
        
             
         <div class="displayed">
-
-            <!-- <div class="displayed__container">
-                
-                <div class="displayed__comment">
-                    <div class="displayed__icon"></div>
-                    
-                    <div class="displayed__box">
-                        <div class="displayed__label">
-                            <p class="displayed__name">Yahoo Answers</p>
-                            <p class="displayed__date">01/01/2000</p>
-                        </div>
-                        <p class="displayed__text">hat makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains. I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my sp</p>
-                    </div>
-                </div>
-            </div> -->
-
         </div>
 
     </section>
@@ -99,7 +83,7 @@
     <footer>
         <div class="footer__top">
             <div class="social">
-                <p class="social__heading">Get In Touch</p>
+                <h3 class="social__heading">Get In Touch</h3>
 
                 <div class="social__icons">
                     <a href=""><img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram icon"></a>
@@ -134,7 +118,6 @@
             </div>
         </div>
         <div class="footer__bottom">
-            <!-- <p class="footer__logo">Bandsite</p> -->
             <img class="footer__logo" src="./assets/logo/Logo-bandsite.svg" alt="bandsite logo">
             <p class="footer__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</p>
         </div>
